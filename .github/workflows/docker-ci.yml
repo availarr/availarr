@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ematts/availarr:latest
+          tags: availarr/availarr:latest
