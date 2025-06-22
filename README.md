@@ -49,7 +49,7 @@ version: '3.8'
 services:
   availarr:
     container_name: availarr
-    image: ematts/availarr:latest
+    image: availarr/availarr:latest
 
     ports:
       - "8686:8686"
