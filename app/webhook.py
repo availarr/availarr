@@ -5,7 +5,8 @@ from app.config_server import load_config
 from app.utils.normalization import normalize_provider
 from app.utils.logging import log_event
 
-router = APIRouter()
+#router = APIRouter()
+webhook_router = APIRouter()
 
 def get_required_config():
     config = load_config()
@@ -119,7 +120,7 @@ def send_approval_notification(title, request_id):
     except requests.RequestException as e:
         log_event("approval_notify_failed", request_id=request_id, error=str(e))
 
-@router.post("")
+@webhook_router.post("/webhook")
 async def handle_webhook(request: Request):
     try:
         payload = await request.json()

@@ -9,6 +9,7 @@ from fastapi.routing import APIRoute
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
+from app.webhook import webhook_router
 from app.api import api_router
 from app.config_server import load_config, save_config, hash_value
 from app.auth import verify_session
@@ -42,6 +43,9 @@ app.add_middleware(
     same_site="lax",
     https_only=False
 )
+
+# --- Unprotected Routed ---
+app.include_router(webhook_router)
 
 # --- Include Protected API Routes ---
 app.include_router(api_router, dependencies=[Depends(verify_session)])
