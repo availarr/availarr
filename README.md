@@ -220,6 +220,133 @@ Security & Session Handling
 👮 Custom auth dependency verify_session applied to all /api routes
 
 
+## 🔐 Resetting Availarr Credentials
+
+If you need to reset your Availarr credentials, follow these steps to delete the key/config file inside the Docker container:
+
+---
+
+### Step 1: Open Terminal on Your Host Machine
+
+Make sure you're on the host where the Availarr container is running. If it's a remote server, SSH into it:
+
+```bash
+ssh username@hostname
+```
+
+---
+
+### Step 2: Identify the Container Name
+
+Run the following command to list running containers and confirm the name is `availarr`:
+
+```bash
+docker ps
+```
+
+Look for a container with the **name** `availarr`. Example output:
+
+```
+CONTAINER ID   IMAGE                     COMMAND   ...   NAMES
+abc123456789   ghcr.io/emattsj/availarr  ...            availarr
+```
+
+---
+
+### Step 3: Access the Container Shell
+
+Run an interactive shell inside the container:
+
+```bash
+docker exec -it availarr /bin/bash
+```
+
+If `/bin/bash` is not available, use:
+
+```bash
+docker exec -it availarr /bin/sh
+```
+
+---
+
+### Step 4: Locate and Delete the Key File
+
+Once inside the container, change to the config directory:
+
+```bash
+cd ..
+cd config
+```
+
+List the contents to confirm:
+
+```bash
+ls
+```
+
+Look for a file like `config.json` or another file that stores credentials or keys.
+
+**Delete the file**:
+
+```bash
+rm config.json
+```
+
+> ⚠️ **Caution:** Be sure you're deleting the correct file. You can inspect it with:
+
+```bash
+cat config.json
+```
+
+---
+
+### Step 5: Exit the Container
+
+Type:
+
+```bash
+exit
+```
+
+---
+
+### Step 6: Restart the Container
+
+To apply the changes and reset credentials:
+
+```bash
+docker restart availarr
+```
+
+---
+
+### Step 7: Access the Web Interface
+
+Open your browser and visit:
+
+```
+http://<host-ip>:8686
+```
+
+You will be prompted to set new credentials.
+
+---
+
+## ✅ Summary of Commands
+
+```bash
+docker exec -it availarr /bin/bash
+cd ..
+cd config
+rm config.json
+exit
+docker restart availarr
+```
+
+---
+
+**Note:** If you're unsure which file to delete or need help automating this process, open an issue or ask for assistance.
+
 
 
 ---
