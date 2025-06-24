@@ -178,8 +178,6 @@ Backend (FastAPI)
 
 Redirects on first login to /change-password
 
-Logs out users post-password update
-
 🧠 Ensured config values persist using CONFIG_PATH volume (/config)
 
 ✅ Validated and securely hashed credentials before saving
@@ -202,8 +200,6 @@ Declines or deletes if found on allowed providers
 🛡️ Centralized get_required_config() for validating API keys and URLs
 
 🔔 Improved Discord notifications:
-
-Custom messages for approve/decline/manual review events
 
 Docker & Deployment
 🐳 Dockerfile optimized:
