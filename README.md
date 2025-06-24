@@ -1,4 +1,4 @@
-![Docker Pulls](https://img.shields.io/docker/pulls/ematts/availarr) ![GitHub last commit](https://img.shields.io/github/last-commit/emattsJ/availarr)
+![Docker Pulls](https://img.shields.io/docker/pulls/availarr/availarr) ![GitHub last commit](https://img.shields.io/github/last-commit/availarr/availarr)
 
 <img src="https://github.com/availarr/availarr/blob/main/availarr.png" alt="availarr logo" width="100" style="display:block; margin-top: 10px;"/>
 
