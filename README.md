@@ -12,7 +12,7 @@ Availarr is a webhook-based automation service that checks whether requested med
 
 ## ✨ Features
 
-* ✅ Checks media availability on TMDb (backed by Prime, Netflix, Apple TV+, Discovery+, Paramount+)
+* ✅ Checks media availability on TMDb (backed by Prime, Netflix, Apple TV+, Discovery+, Paramount+ etc...)
 * 🚀 Webhook-based — plug directly into Overseerr
 * 🚨 Sends Discord alerts on rejections or approvals
 * 🌐 Live web interface for entering API keys and selecting provider settings
